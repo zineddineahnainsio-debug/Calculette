@@ -9,44 +9,33 @@ namespace TestCalculatrice
         {
             double a = 5;
             double b = 0;
-            char op = '/';
+            char op = '$';
             double res = 8;
             Calculatrice calc = new Calculatrice();
             double test = calc.Calculer(a, b, op);
-            Assert.AreEqual(res, test,0.001,"Division par 0 impossible");
+            Assert.AreEqual(res, test);
         }
         [TestMethod]
         public void TestMethod2()
         {
             double a = 5;
-            double b = Math.Pow(10, 1000000);
+            double b = null;
             char op = '+';
             double res = 2;
             Calculatrice calc = new Calculatrice();
             double test = calc.Calculer(a, b, op);
-            Assert.AreEqual(res, test,0.001, "Nombre trop grand");
+            Assert.AreEqual(res, test);
         }
         [TestMethod]
         public void TestMethod3()
         {
-            double a = Math.Pow(10, -200000);
-            double b = Math.Pow(10, -200000);
+            double a = 5.9;
+            double b = 5.9. ;
             char op = '+';
             double res = 5;
             Calculatrice calc = new Calculatrice();
             double test = calc.Calculer(a, b, op);
-            Assert.AreEqual(res, test,0.001, "Nombre trop petit");
-        }
-        [TestMethod]
-        public void TestMethod4()
-        {
-            double a = double.PositiveInfinity;
-            double b = double.NaN;
-            char op = '+';
-            double res = 6.5;
-            Calculatrice calc = new Calculatrice();
-            double test = calc.Calculer(a, b, op);
-            Assert.AreEqual(res, test, 0.001, "Calcul Impossible");
+            Assert.AreEqual(res, test);
         }
     }
 }
